@@ -181,7 +181,7 @@ A lightweight design system was created to ensure consistency across the app.
 
 ### 📖 Book Detail View
 
-[INSERT IMAGE HERE — Book Detail Screen]
+![Book Detail View Screen](./screenshots/individual-book-view.jpg)
 
 **Highlights:**
 
