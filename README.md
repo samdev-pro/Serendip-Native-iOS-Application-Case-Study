@@ -157,9 +157,9 @@ A lightweight design system was created to ensure consistency across the app.
 - Maintains same structural layout as All Books
 
 
-### 🔍 Discovery Experience
+### 🔍 Discover Experience
 
-[INSERT IMAGE HERE — Discover Screen]
+![Discover Screen](./screenshots/discover.jpg)
 
 **Highlights:**
 
@@ -170,7 +170,7 @@ A lightweight design system was created to ensure consistency across the app.
 
 ### ➕ Add Book Flow
 
-![Add Book Screens](./screenshots/Add-Books-Feature.jpg)
+![Add Book Screens](./screenshots/add-books-feature.jpg)
 
 **Highlights:**
 
@@ -265,13 +265,12 @@ All business logic and monetization strategy are intentionally excluded.
 
 Check out other projects focused on:
 
-- 📊 Data dashboards
-- 🤖 Automation tools
-- 🧠 UX-driven systems
+- 📊 [Data dashboards](https://github.com/samdev-pro/Data-Center-QC-Dashboard)
+- 🤖 [Automation tools](https://github.com/samdev-pro/KPI-Construction-Bot)
 
 ---
 
 ## 🤝 Contact
 
-Interested in how I can help your team transform its construction data workflows? Let’s connect.<br />
+Interested in how I can help your team transform its data workflows? Let’s connect.<br />
 📧 [Email Me](mailto:sam@samhuss.dev)  💼 [LinkedIn](https://www.linkedin.com/in/samhuss/)
