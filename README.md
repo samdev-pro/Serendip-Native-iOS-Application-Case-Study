@@ -170,7 +170,7 @@ A lightweight design system was created to ensure consistency across the app.
 
 ### ➕ Add Book Flow
 
-[INSERT IMAGE HERE — Add Book Screen]
+![Add Book Screens](./screenshots/Add-Books-Feature.jpg)
 
 **Highlights:**
 
