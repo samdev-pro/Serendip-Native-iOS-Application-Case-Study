@@ -148,7 +148,7 @@ A lightweight design system was created to ensure consistency across the app.
 
 ### 📚 Library — Shelves View
 
-[INSERT IMAGE HERE — Shelves View]
+![All Shelves Screen](./screenshots/shelves-view.jpg)
 
 **Highlights:**
 
