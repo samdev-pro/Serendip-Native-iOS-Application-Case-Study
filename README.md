@@ -135,16 +135,6 @@ A lightweight design system was created to ensure consistency across the app.
 
 ## 🖼️ Key Screens
 
-### 📱 Library — All Books View
-
-[INSERT IMAGE HERE — All Books Screen]
-
-**Highlights:**
-
-- Clean list/grid layout
-- Easy scanning
-- Strong hierachy
-
 
 ### 📚 Library — Shelves View
 
@@ -154,7 +144,20 @@ A lightweight design system was created to ensure consistency across the app.
 
 - Grouped organization
 - Visual categorization
-- Maintains same structural layout as All Books
+- Designed for quick scanning and recognition
+
+
+
+### 📱 Library — Individual Shelf View
+
+![Individual Shelf View Screen](./screenshots/individual-shelf-view.jpg)
+
+**Highlights:**
+
+- Focused view of a single curated collection
+- Easy scanning
+- Clear hierarchy between shelf identity and book content
+
 
 
 ### 🔍 Discover Experience
@@ -168,6 +171,7 @@ A lightweight design system was created to ensure consistency across the app.
 - Encourages browsing
 
 
+
 ### ➕ Add Book Flow
 
 ![Add Book Screens](./screenshots/add-books-feature.jpg)
@@ -177,6 +181,7 @@ A lightweight design system was created to ensure consistency across the app.
 - Simplified inputs
 - Clear next steps
 - Reduced decision fatigue
+
 
 
 ### 📖 Book Detail View
