@@ -15,7 +15,7 @@ I took the project from initial UX concepts through implementation of a working 
 **Project milestone:** Presented the MVP to a prospective partner, demonstrating the application and discussing its core experience. This presentation does not imply a formal partnership.
 
 <!-- SCREENSHOT NOTE: Place one polished, CURRENT MVP screenshot immediately below this paragraph. Prefer the Library screen with real book covers, clear hierarchy, and no personal/account data. Use a screenshot from the running iOS app, not an early Adobe XD mockup. Replace the placeholder path once exported. -->
- <img src="./screenshots/mvp-intro-iphone.jpg" alt="Intro screen" width="300">
+ <img src="./screenshots/mvp-intro-iphone.png" alt="Intro screen" width="300">
 
 ## 👨‍💻 My Role
 
