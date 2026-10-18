@@ -1,281 +1,174 @@
-# 📚 Book Tracking App — UX/UI Case Study
+# Serendip — Native iOS Application Case Study
 
-A mobile-first UX/UI case study exploring the design of a book tracking application focused on clarity, scalability, and intuitive interaction patterns.
+**Swift · SwiftUI · MVVM · Supabase · PostgreSQL · External API Integration**
 
-This project emphasizes systems-level thinking, including state-driven UI, unified screen architecture, and consistent visual design. The goal was to reduce cognitive load while enabling flexible ways for users to organize, view, and engage with their personal library.
+> **Portfolio case study — not an open-source release.** This repository documents selected engineering and design work. Application source code, internal data structures, proprietary functionality, and commercial plans are intentionally excluded.
 
-This case study highlights the design process, key UX decisions, and the resulting interface patterns.
+## Overview
 
----
+Serendip is a native iOS application for organizing a personal book library and discovering books to read. I began the project to solve problems I experienced firsthand: remembering books I had read or wanted to read, and finding a straightforward alternative to cluttered book-management interfaces.
 
-## 🧭 Overview
+I took the project from initial UX concepts through implementation of a working MVP, combining native iOS development with backend services and third-party book metadata integration.
 
-A mobile-first **book tracking application** focused on creating a clean, intuitive, and scalable user experience for managing personal reading habits.
+**Project status:** Working MVP; further development and validation are ongoing.
 
-This case study highlights:
+<!-- SCREENSHOT NOTE: Place one polished, CURRENT MVP screenshot immediately below this paragraph. Prefer the Library screen with real book covers, clear hierarchy, and no personal/account data. Use a screenshot from the running iOS app, not an early Adobe XD mockup. Replace the placeholder path once exported. -->
+<!-- ![Serendip library screen](./screenshots/serendip-library.jpg) -->
 
-- UX system design
-- Interaction modeling
-- Visual design consistency
-- Scalable UI thinking
+## My Role
 
-⚠️ Note: Product strategy, monetization, and long-term roadmap are intentionally excluded.
+I am responsible for the product's design and development, including:
 
----
+- Defining application requirements and user workflows
+- Designing the interface and interaction patterns
+- Developing native iOS functionality with Swift and SwiftUI
+- Organizing presentation and application logic using MVVM principles
+- Integrating backend persistence and external book metadata services
+- Debugging, testing, and refining the MVP
 
-## 📌 Table of Contents
+I use AI-assisted development tools as part of my workflow, alongside direct design, implementation review, troubleshooting, and validation. The case study describes my actual contributions rather than implying that every line of code was written without assistance.
 
-- [Problem](#-problem)
-- [Aproach](#-approach)
-- [Core UX Decisions](#-core-ux-decisions)
-- [Visual Design System](#-visual-design-system)
-- [Key Screens](#-key-screens)
-- [Interaction Design](#-interaction-design)
-- [Constraints & Tradeoffs](#-constraints--tradeoffs)
-- [Outcomes](#-outcomes)
-- [Key Takeaways](#-key-takeaways)
-- [Tools & Process](#-tolls--process)
+## Technology & Tools
 
----
+| Area | Technologies / approach |
+| --- | --- |
+| iOS application | Swift, SwiftUI |
+| Application structure | MVVM |
+| Backend and persistence | Supabase, PostgreSQL |
+| Book metadata | Google Books API |
+| Design | Adobe XD; iterative UI refinement |
+| Development workflow | Xcode, Git/GitHub, Cursor, ChatGPT |
 
-## 🎯 Problem
+The technologies above describe the project's stack, not a claim of equal independent proficiency in each tool.
 
-Most book tracking apps struggle with:
+## Selected Application Screens
 
-- ❌ Overly complex interfaces
-- ❌ Fragmented navigation
-- ❌ Poor library organization
-- ❌ Weak discovery experiences
+These examples show a small portion of the implemented experience. The intent is to demonstrate application quality and engineering scope without documenting the full product.
 
-### Goal
+### Library
 
-Design a system that enables users to:
+<!-- SCREENSHOT NOTE: Insert CURRENT MVP Library screenshot here. Choose either the All Books or Shelves view—whichever best shows populated data, readable controls, and visual consistency. Avoid showing both if they reveal unnecessary product details. -->
 
-- ✅ Organize their personal library intuitively
-- ✅ Switch between different views seamlessly
-- ✅ Discover content with minimal friction
-- ✅ Stay engaged without cognitive overload
+<img src="./screenshots/mvp-library.png" alt="Library All Books screen" width="400">
 
----
+A book-centered interface designed to make a personal collection easy to browse and manage.
 
-## 🧠 Approach
+### Add a Book via Search
 
-This was treated as a **systems-level UX challenge**, not just screen design.
+<!-- SCREENSHOT NOTE: Insert CURRENT MVP book-search or add-book screen here. Prefer a neutral search result and the clearest example of a working data-driven flow. Avoid revealing unreleased capture features or internal diagnostic overlays. -->
 
-### Principles
+<img src="./screenshots/mvp-add-book.png" alt="Add Book screen" width="400">
 
-- 🧩 State-driven UI over navigation-driven UI
-- 🧠 Single source of truth for core screens
-- 🪶 Low cognitive load
-- 🎯 Strong visual hierarchy
-- 🔁 Consistent interaction patterns
+An input workflow that prioritizes clear actions and avoids unnecessary steps. This is one of several methods of entry.
 
----
+### Book Detail
 
-## 🧩 Core UX Decisions
+<!-- SCREENSHOT NOTE: Insert CURRENT MVP Book Detail screenshot here, ideally showing basic metadata and an ordinary reading-status control. Crop out any private account information or unpublished functionality. -->
 
-### 1️⃣ Unified Library Experience
+<img src="./screenshots/mvp-book.png" alt="Individual Book screen" width="400">
 
-Instead of splitting into multiple sections, the app uses a **single unified screen**.
+A focused detail view that presents book information and relevant library actions.
 
-- Toggle between views (e.g., all books vs. grouped)
-- No redundant navigation
-- Maintains user context
+### Discover (Optional)
 
-💡 **Impact:**
-Reduces mental overhead and creates a more fluid experience.
+<!-- SCREENSHOT NOTE: Include this fourth screenshot ONLY if the current Discover screen is implemented, representative of the MVP, and you are comfortable making it public. Otherwise OMIT this entire subsection. Do not publish proprietary recommendation logic or unreleased workflows. -->
 
+<img src="./screenshots/mvp-discover.png" alt="Discover screen" width="400">
 
-### 2️⃣ Display Modes as State (Not Navigation)
+A browsing experience emphasizing visual clarity and ease of exploration.
 
-Views are handled as **UI states**, not separate screens.
+## Engineering Approach
 
-- Faster transitions
-- Fewer screens
-- Easier scalability
+### Native, State-Driven Interfaces
 
-💡 **Impact:**
-Users remain grounded in one consistent environment.
+I used SwiftUI to develop a native interface where visible content responds to application state. The goal was to keep interactions predictable and minimize redundant navigation while maintaining a consistent experience across views.
 
+### Separation of Concerns
 
-### 3️⃣ Passive UI Architecture
+The application follows MVVM principles to organize presentation, state, and data-related responsibilities. This supports clearer reasoning about UI behavior and makes ongoing changes easier to manage.
 
-- UI is purely presentational
-- Logic handled separately
-- Strong data binding
+### Data Integration & Persistence
 
-💡 **Impact:**
-Improves maintainability and predictability of UI behavior.
+The MVP combines externally sourced book metadata with application-managed library information, using Supabase and PostgreSQL for backend services and persistence. This required coordinating user-facing workflows with asynchronous data operations and persisted application state.
 
----
+<!-- EDITOR NOTE: Confirm the precise responsibilities of each layer and the persistence behavior against the current Xcode project before publication. Avoid claims about caching, offline support, synchronization guarantees, security hardening, or production-scale performance unless verified. -->
 
-## 🎨 Visual Design System
-A lightweight design system was created to ensure consistency across the app.
+## Engineering Decisions & Tradeoffs
 
-### 🎨 Color Philosophy
-- Neutral, warm background tones for reduced eye strain
-- High-contrast text for readability
-- Subtle accenting for hierarchy rather than decoration
+### 1. Simplifying Common User Actions
 
-### 🔤 Typography
-- Clear hierarchy:
-	- Primary headings
-	- Secondary metadata
-	- Supporting text
-- Optimized for:
-  	- Scanning
-  	- Long reading sessions
+**Problem:** Existing book tracking apps felt unnecessarily complex for routine tasks such as finding and saving a book.
 
-### 📐 Spacing & Layout
-- Consistent spacing scale
-- Card-based modular layout
-- Focus on **clarity over density**
+**Approach:** Prioritize direct, clearly labeled actions and consistent interface patterns instead of adding steps for their own sake.
 
----
+**Result:** A working MVP with a focused set of core library workflows that are easily accessible.
 
-## 🖼️ Key Screens
+### 2. Maintaining Consistent Application Behavior
 
+**Problem:** A growing set of screens and user actions requires consistent presentation and state handling.
 
-### 📚 Library — Shelves View
+**Approach:** Use SwiftUI's declarative UI model and MVVM separation to organize behavior and reduce unnecessary coupling.
 
-![All Shelves Screen](./screenshots/shelves-view.jpg)
+**Result:** An application structure that can be iterated on as functionality evolves.
 
-**Highlights:**
+### 3. Connecting External Metadata to User Records
 
-- Grouped organization
-- Visual categorization
-- Designed for quick scanning and recognition
+**Problem:** Book information retrieved from an external service must support a user's persistent personal library.
 
+**Approach:** Integrate an external book metadata API with backend persistence while keeping the user workflow straightforward.
 
+**Result:** The MVP supports searching for books and managing saved library records.
 
-### 📱 Library — Individual Shelf View
+<!-- EDITOR NOTE: These are deliberately high-level descriptions. Before publishing, replace at least ONE with a specific, interview-defensible example from your actual implementation: the issue encountered, alternatives considered, your decision, and how you verified the outcome. Do not include source code, schemas, internal matching rules, or confidential algorithms. -->
 
-![Individual Shelf View Screen](./screenshots/individual-shelf-view.jpg)
+## Verification & Current Status
 
-**Highlights:**
+The MVP has been developed to support account creation, book search, adding books to a personal library, updating reading status, and retrieving saved information in subsequent sessions.
 
-- Focused view of a single curated collection
-- Easy scanning
-- Clear hierarchy between shelf identity and book content
+<!-- VERIFICATION REQUIRED: You said you BELIEVE each workflow works end-to-end. Before making the statement above publicly, manually test the full sequence: create/sign in to an account -> search -> add -> change status -> fully close/relaunch -> sign back in if needed -> confirm the saved book/status persists. If any step fails, revise this section to state only what has been verified. -->
 
+This is an active development project, not a claim of a publicly released production application. I am not presenting unmeasured performance, adoption, or reliability statistics as outcomes.
 
+## UX/UI Principles
 
-### 🔍 Discover Experience
+- **Clarity:** Put the primary task ahead of decorative or distracting interface elements.
+- **Consistency:** Reuse interaction and presentation patterns where appropriate.
+- **Efficiency:** Reduce avoidable steps in common workflows.
+- **Readability:** Use clear hierarchy, spacing, and legible book metadata.
+- **Restraint:** Keep the interface focused rather than adding engagement mechanics unrelated to the task.
 
-![Discover Screen](./screenshots/discover.jpg)
+<!-- OPTIONAL SCREENSHOT NOTE: If the README feels too text-heavy, use a compact two-image comparison of CURRENT Library and Book Detail screens here. Avoid duplicating screenshots already shown above; usually the three primary screenshots are sufficient. -->
 
-**Highlights:**
+## What This Project Demonstrates
 
-- Low-friction exploration
-- Minimal UI clutter
-- Encourages browsing
+- End-to-end ownership of an application project, from requirements and interface design through a working MVP
+- Native iOS implementation using Swift and SwiftUI
+- Application organization using MVVM principles
+- Integration of external APIs and backend persistence
+- Practical tradeoffs between interface simplicity and evolving requirements
+- Iterative development, debugging, and review using contemporary development tools
 
+## Scope of This Case Study
 
+This repository contains documentation and selected screenshots only. It does **not** include application source code, proprietary implementation details, database schemas, credentials, unreleased feature specifications, internal product analytics, or commercial strategy.
 
-### ➕ Add Book Flow
+<!-- PUBLICATION CHECKLIST (remove or retain as an HTML comment):
+[ ] Confirm all technical claims against the current codebase.
+[ ] Run and verify the end-to-end workflow described above.
+[ ] Replace all image placeholders with selected current screenshots.
+[ ] Remove personal information, internal URLs, test credentials, and unreleased features from images.
+[ ] Check repository history for accidentally committed sensitive files; deleting from the latest commit is not sufficient.
+[ ] Confirm links and contact information are current.
+[ ] Review the complete public repository as a stranger would see it.
+-->
 
-![Add Book Screens](./screenshots/add-books-feature.jpg)
+## Other Work
 
-**Highlights:**
+- [Data Center QC Dashboard](https://github.com/samdev-pro/Data-Center-QC-Dashboard)
+- [KPI Construction Bot](https://github.com/samdev-pro/KPI-Construction-Bot)
 
-- Simplified inputs
-- Clear next steps
-- Reduced decision fatigue
+## Contact
 
+Interested in discussing iOS development, application engineering, or software development opportunities?
 
-
-### 📖 Book Detail View
-
-![Book Detail View Screen](./screenshots/individual-book-view.jpg)
-
-**Highlights:**
-
-- Focused layout
-- Clear action hierarchy
-- Quick updates
-
----
-
-## 🔄 Interaction Design
-
-Key interaction principles:
-
-- ⚡ Fast, low-friction transitions
-- 🔁 Predictable interactions
-- 🚫 Minimal modal interruptions
-- 🔔 Immediate feedback on actions
-
----
-
-## ⚙️ Constraints & Tradeoffs
-
-- Prioritized **clarity over feature density**
-- Avoided over-engineering early UX flows
-- Designed for scalability without exposing complexity in the UI
-- Balanced flexibility with simplicity in user workflows
-
----
-
-## 📈 Outcomes
-
-This project demonstrates:
-
-- ✅ UX system thinking
-- ✅ State-driven interface design
-- ✅ Clean and scalable UI patterns
-- ✅ Strong interaction modeling
-
----
-
-## 🧠 Key Takeaways
-
-- UI as a **state system** simplifies UX + engineering
-- Less navigation = better user flow
-- Consistency improves usability dramatically
-- Separation of concerns enables scalability
-
----
-
-## 🛠️ Tools & Process
-
-### Design
-
-- Adobe XD
-
-### Implementation Alignment
-
-- SwiftUI
-- MVVM architecture
-
-### Workflow
-```bash
-Mockups → System Design → Interaction Modeling → UI Refinement
-```
-
----
-
-## 📌 Final Notes
-
-This project emphasizes:
-
-- UX clarity
-- Interaction design
-- Scalable UI systems
-
-All business logic and monetization strategy are intentionally excluded.
-
----
-
-## 🚀 Explore More
-
-Check out other projects focused on:
-
-- 📊 [Data dashboards](https://github.com/samdev-pro/Data-Center-QC-Dashboard)
-- 🤖 [Automation tools](https://github.com/samdev-pro/KPI-Construction-Bot)
-
----
-
-## 🤝 Contact
-
-Interested in how I can help your team transform it's data workflows? Let’s connect.<br />
-📧 [Email Me](mailto:sam@samhuss.dev)  💼 [LinkedIn](https://www.linkedin.com/in/samhuss/)
+[Email](mailto:sam@samhuss.dev) · [LinkedIn](https://www.linkedin.com/in/samhuss/)
