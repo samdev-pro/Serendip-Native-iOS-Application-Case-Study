@@ -1,168 +1,161 @@
 # Serendip — Native iOS Application Case Study
 
-**Swift · SwiftUI · MVVM · Supabase · PostgreSQL · External API Integration**
+**Swift · SwiftUI · MVVM · Supabase · PostgreSQL · Google Books API**
 
-> **Portfolio case study — not an open-source release.** This repository documents selected engineering and design work. Application source code, internal data structures, proprietary functionality, and commercial plans are intentionally excluded.
+> A portfolio case study of a working iOS application MVP. The application source code and proprietary implementation details remain private.
 
 ## 🧭 Overview
 
-Serendip is a native iOS application for organizing a personal book library and discovering books to read. I began the project to solve problems I experienced firsthand: remembering books I had read or wanted to read, and finding a straightforward alternative to cluttered book-management interfaces.
+Serendip is a native iOS application for organizing a personal book library and discovering books to read. I started the project to address two problems I encountered myself: keeping track of books I had read or wanted to read, and finding a straightforward way to manage that information without unnecessary interface complexity.
 
-I took the project from initial UX concepts through implementation of a working MVP, combining native iOS development with backend services and third-party book metadata integration.
+I developed Serendip from initial UX concepts into a working MVP, integrating native iOS interfaces, backend persistence, and third-party book metadata.
 
-**Project status:** Working MVP; further development and validation are ongoing.
+**Status:** Working MVP; development and validation are ongoing.  
+**Milestone:** Presented and demonstrated the MVP to a prospective partner, explaining the application and its core user experience.
 
-**Project milestone:** Presented the MVP to a prospective partner, demonstrating the application and discussing its core experience. This presentation does not imply a formal partnership.
-
-<!-- SCREENSHOT NOTE: Place one polished, CURRENT MVP screenshot immediately below this paragraph. Prefer the Library screen with real book covers, clear hierarchy, and no personal/account data. Use a screenshot from the running iOS app, not an early Adobe XD mockup. Replace the placeholder path once exported. -->
- <img src="./screenshots/mvp-intro-iphone.png" alt="Intro screen" width="300">
+<!-- IMAGE: Intro screen. Keep this as a single opening image; it establishes product identity. Confirm the final framed PNG matches the screenshots below. -->
+<img src="./screenshots/mvp-intro-iphone.png" alt="Serendip iOS welcome screen" width="300">
 
 ## 👨‍💻 My Role
 
-I am responsible for the product's design and development, including:
+I lead the product's design and development, including:
 
-- Defining application requirements and user workflows
-- Designing the interface and interaction patterns
-- Developing native iOS functionality with Swift and SwiftUI
-- Organizing presentation and application logic using MVVM principles
-- Integrating backend persistence and external book metadata services
-- Debugging, testing, and refining the MVP
+- Defining requirements and mapping user workflows
+- Designing interfaces and interaction patterns
+- Building native iOS functionality with Swift and SwiftUI
+- Applying MVVM principles to organize presentation and application responsibilities
+- Integrating external book metadata and backend data persistence
+- Testing, debugging, and iterating on the MVP
+- Preparing and presenting a working demonstration to an external stakeholder
 
-I use AI-assisted development tools as part of my workflow, alongside direct design, implementation review, troubleshooting, and validation. The case study describes my actual contributions rather than implying that every line of code was written without assistance.
+My workflow combines hands-on product and application development with AI-assisted implementation, debugging, and iteration. I use Xcode, Cursor, and ChatGPT alongside design review, troubleshooting, and validation.
 
 ## 🛠️ Technology & Tools
 
 | Area | Technologies / approach |
 | --- | --- |
-| iOS application | Swift, SwiftUI |
-| Application structure | MVVM |
+| Native iOS | Swift, SwiftUI |
+| Application organization | MVVM |
 | Backend and persistence | Supabase, PostgreSQL |
-| Book metadata | Google Books API |
-| Design | Adobe XD; iterative UI refinement |
-| Development workflow | Xcode, Git/GitHub, Cursor, ChatGPT |
-
-The technologies above describe the project's stack, not a claim of equal independent proficiency in each tool.
+| External data | Google Books API |
+| Interface design | Adobe XD, iterative UI refinement |
+| Development | Xcode, Git/GitHub, Cursor, ChatGPT |
 
 ## 📱 Selected Application Screens
 
-These examples show a small portion of the implemented experience. The intent is to demonstrate application quality and engineering scope without documenting the full product.
+The following screens illustrate the MVP's interface and key user-facing workflows. They are selected examples, not a complete feature inventory.
 
 ### Library
 
-<!-- IMAGE PRESENTATION NOTE: Consider placing this and the other screenshots inside matching, straight-on iPhone frames. Use the same frame, scale, and padding for each; avoid perspective or decorative backgrounds. Keep screen contents readable. Replace the existing PNG assets with framed exports using the SAME filenames, or update paths below. Do not add a fake status bar or crop functional content. -->
-<!-- SCREENSHOT NOTE: Insert CURRENT MVP Library screenshot here. Choose either the All Books or Shelves view—whichever best shows populated data, readable controls, and visual consistency. Avoid showing both if they reveal unnecessary product details. -->
+<!-- IMAGE: Use the current All Books screenshot in its matching, straight-on iPhone frame. This shows populated content, consistent layout, and navigation. -->
+<img src="./screenshots/mvp-library-iphone.png" alt="Serendip personal library showing a grid of saved books" width="300">
 
-<img src="./screenshots/mvp-library-iphone.png" alt="Library All Books screen" width="300">
-
-A book-centered interface designed to make a personal collection easy to browse and manage.
+A browsable personal library with clear visual hierarchy and straightforward access to saved books.
 
 ### Add a Book via Search
 
-<!-- SCREENSHOT NOTE: Insert CURRENT MVP book-search or add-book screen here. Prefer a neutral search result and the clearest example of a working data-driven flow. Avoid revealing unreleased capture features or internal diagnostic overlays. -->
+<!-- IMAGE: Use the existing Clive Cussler search-results screenshot. Check that the framed version preserves legible titles and does not alter book metadata. -->
+<img src="./screenshots/mvp-add-book-iphone.png" alt="Serendip book search displaying results from external book metadata" width="300">
 
-<img src="./screenshots/mvp-add-book-iphone.png" alt="Add Book screen" width="300">
-
-An input workflow that prioritizes clear actions and avoids unnecessary steps. This is one of several methods of entry.
+A search-driven entry point that presents external book information in a format users can quickly scan and act on.
 
 ### Book Detail
 
-<!-- SCREENSHOT NOTE: Insert CURRENT MVP Book Detail screenshot here, ideally showing basic metadata and an ordinary reading-status control. Crop out any private account information or unpublished functionality. -->
+<!-- IMAGE: Use The Rose Code screenshot. It visibly demonstrates book metadata and reading-status actions. Review the visible text and controls before publication. -->
+<img src="./screenshots/mvp-book-iphone.png" alt="Serendip book detail showing book information and reading status" width="300">
 
-<img src="./screenshots/mvp-book-iphone.png" alt="Individual Book screen" width="300">
+A focused view of book information and personal-library actions, including reading-status management.
 
-A focused detail view that presents book information and relevant library actions.
+### Discover
 
-### Discover (Optional)
+<!-- IMAGE: This screen discloses visible author and curated-collection features. Publish only if you are comfortable showing these publicly. If not, remove this subsection and image. -->
+<img src="./screenshots/mvp-discover-iphone.png" alt="Serendip Discover screen featuring books and curated collections" width="300">
 
-<!-- SCREENSHOT NOTE: Include this fourth screenshot ONLY if the current Discover screen is implemented, representative of the MVP, and you are comfortable making it public. Otherwise OMIT this entire subsection. Do not publish proprietary recommendation logic or unreleased workflows. -->
-
-<img src="./screenshots/mvp-discover-iphone.png" alt="Discover screen" width="300">
-
-A browsing experience emphasizing visual clarity and ease of exploration.
+A visually organized browsing experience designed to make exploring books and authors approachable.
 
 ## 🏗️ Engineering Approach
 
-### Native, State-Driven Interfaces
+### Native, State-Driven UI
 
-I used SwiftUI to develop a native interface where visible content responds to application state. The goal was to keep interactions predictable and minimize redundant navigation while maintaining a consistent experience across views.
+I developed the interface in SwiftUI, using its declarative model to connect what appears on screen with application state. Consistent navigation and reusable interaction patterns help keep common workflows understandable as the application evolves.
 
-### Separation of Concerns
+### Separation of Responsibilities
 
-The application follows MVVM principles to organize presentation, state, and data-related responsibilities. This supports clearer reasoning about UI behavior and makes ongoing changes easier to manage.
+I use MVVM principles to organize view presentation, application state, and data-related work. This provides a practical structure for refining screens and behavior without treating each interface as an isolated implementation.
 
-### Data Integration & Persistence
+### External Data and Persistence
 
-The MVP combines externally sourced book metadata with application-managed library information, using Supabase and PostgreSQL for backend services and persistence. This required coordinating user-facing workflows with asynchronous data operations and persisted application state.
+Serendip brings together book metadata from the Google Books API and user-managed library information persisted through Supabase and PostgreSQL. The application coordinates data retrieval and saved user records within its book-management workflows.
 
-<!-- EDITOR NOTE: Confirm the precise responsibilities of each layer and the persistence behavior against the current Xcode project before publication. Avoid claims about caching, offline support, synchronization guarantees, security hardening, or production-scale performance unless verified. -->
+<!-- TECHNICAL REVIEW: Verify this description against the current project. Do not add claims about offline support, advanced synchronization, security guarantees, performance, or test coverage without evidence. -->
 
 ## ⚙️ Engineering Decisions & Tradeoffs
 
-### 1. Simplifying Common User Actions
+### 1. Prioritizing Common Tasks
 
-**Problem:** Existing book tracking apps felt unnecessarily complex for routine tasks such as finding and saving a book.
+**Consideration:** Finding, saving, and managing books should not require users to navigate unnecessary complexity.
 
-**Approach:** Prioritize direct, clearly labeled actions and consistent interface patterns instead of adding steps for their own sake.
+**Decision:** Favor direct actions, readable information, and consistent interaction patterns over feature-heavy screens.
 
-**Result:** A working MVP with a focused set of core library workflows that are easily accessible.
+**Result:** The MVP provides focused workflows for searching for books and managing a personal library.
 
-### 2. Architectural Decision: Organizing Application State with MVVM
+### 2. Organizing Application State with MVVM
 
-**Context:** Multiple application views and user actions benefit from clearly defined responsibilities for presentation and state.
+**Consideration:** Multiple screens and user actions require a maintainable way to organize presentation and application behavior.
 
-**Decision:** Apply SwiftUI’s declarative UI model and MVVM principles to separate presentation from application state and related responsibilities.
+**Decision:** Combine SwiftUI's state-driven interface model with MVVM principles to separate responsibilities.
 
-**Outcome:** An organizational approach intended to make UI behavior easier to reason about and refine as the MVP evolves.
+**Result:** A structured foundation for implementing and refining the MVP's views and workflows.
 
-### 3. Engineering Decision: Integrating External Book Data with Persistent User Records
+### 3. Integrating Book Metadata with User-Managed Records
 
-**Context:** External book metadata and user-managed library records serve different purposes in the application.
+**Consideration:** External book information and a user's saved library data have different roles.
 
-**Decision:** Connect the external book metadata service with backend persistence while keeping the book-search and save experience straightforward.
+**Decision:** Integrate book metadata retrieval with backend persistence while keeping the user-facing search and save experience straightforward.
 
-**Outcome:** The MVP supports book search and management of saved personal library records.
+**Result:** Users can search for books and manage records in their personal library.
 
-<!-- EDITOR NOTE: Sections 2 and 3 are engineering decisions, NOT claims that these were bugs or difficult incidents. These are deliberately high-level descriptions. Before publishing, replace at least ONE with a specific, interview-defensible example from your actual implementation: the issue encountered, alternatives considered, your decision, and how you verified the outcome. Do not include source code, schemas, internal matching rules, or confidential algorithms. -->
+<!-- INTERVIEW PREPARATION: These are design and engineering decisions, not claims about specific bugs or complex incidents. Consider adding one verified example of an actual technical obstacle, the alternatives considered, and how you tested the solution. Do not disclose proprietary logic or database structures. -->
 
-## ✅ Verification & Current Status
+## ✅ MVP Status & Validation
 
-The MVP has been developed to support account creation, book search, adding books to a personal library, updating reading status, and retrieving saved information in subsequent sessions.
+The MVP includes account creation, book search, adding books to a personal library, reading-status updates, and retrieval of saved information across sessions.
 
-<!-- VERIFICATION REQUIRED: You said you BELIEVE each workflow works end-to-end. Before making the statement above publicly, manually test the full sequence: create/sign in to an account -> search -> add -> change status -> fully close/relaunch -> sign back in if needed -> confirm the saved book/status persists. If any step fails, revise this section to state only what has been verified. -->
+The application has also been demonstrated to a prospective partner. Serendip remains an active development project; this case study does not represent a public App Store release or an established commercial partnership.
 
-The MVP has also been demonstrated to a prospective partner. This is an active development project, not a claim of a publicly released production application. I am not presenting unmeasured performance, adoption, or reliability statistics as outcomes.
+<!-- VERIFY BEFORE PUBLICATION: Confirm the complete flow on the current build: create/sign in -> search -> add -> change status -> force quit -> relaunch/sign in -> verify saved book and status. If any step does not work, revise the paragraph above to reflect what is verified. -->
 
 ## 🎨 UX/UI Principles
 
-- **Clarity:** Put the primary task ahead of decorative or distracting interface elements.
-- **Consistency:** Reuse interaction and presentation patterns where appropriate.
-- **Efficiency:** Reduce avoidable steps in common workflows.
-- **Readability:** Use clear hierarchy, spacing, and legible book metadata.
-- **Restraint:** Keep the interface focused rather than adding engagement mechanics unrelated to the task.
-
-<!-- OPTIONAL SCREENSHOT NOTE: If the README feels too text-heavy, use a compact two-image comparison of CURRENT Library and Book Detail screens here. Avoid duplicating screenshots already shown above; usually the three primary screenshots are sufficient. -->
+- **Clarity:** Make the primary task easy to identify.
+- **Consistency:** Reuse familiar layout and interaction patterns.
+- **Efficiency:** Reduce avoidable steps in routine workflows.
+- **Readability:** Use clear typography, spacing, and content hierarchy.
+- **Restraint:** Favor purposeful functionality over interface clutter.
 
 ## 🎯 What This Project Demonstrates
 
-- End-to-end ownership of an application project, from requirements and interface design through a working MVP
-- Native iOS implementation using Swift and SwiftUI
-- Application organization using MVVM principles
-- Integration of external APIs and backend persistence
-- Practical tradeoffs between interface simplicity and evolving requirements
-- Iterative development, debugging, and review using contemporary development tools
+Serendip brings together capabilities that span native iOS development and broader software engineering:
 
-## 🔒 Scope of This Case Study
+- Taking an application from requirements and UX design to a working MVP
+- Implementing native SwiftUI interfaces with an MVVM-oriented structure
+- Integrating external APIs and backend persistence
+- Making practical tradeoffs between usability and implementation complexity
+- Iterating through testing, debugging, and review
+- Explaining and demonstrating software to a prospective external partner
 
-This repository contains documentation and selected screenshots only. It does **not** include application source code, proprietary implementation details, database schemas, credentials, unreleased feature specifications, internal product analytics, or commercial strategy.
+## 🔒 Repository Scope
 
-<!-- PUBLICATION CHECKLIST (remove or retain as an HTML comment):
-[ ] Confirm all technical claims against the current codebase.
-[ ] Run and verify the end-to-end workflow described above.
-[ ] Replace all image placeholders with selected current screenshots.
-[ ] Remove personal information, internal URLs, test credentials, and unreleased features from images.
-[ ] Check repository history for accidentally committed sensitive files; deleting from the latest commit is not sufficient.
-[ ] Confirm links and contact information are current.
-[ ] Review the complete public repository as a stranger would see it.
+This is a **documentation-only portfolio repository**. Application source code, internal data structures, proprietary implementation details, credentials, unreleased specifications, and commercial plans are not included.
+
+<!-- PRE-PUBLICATION CHECKLIST:
+[ ] Verify the end-to-end MVP workflow and all technical claims.
+[ ] Confirm each screenshot is from the current app and the iPhone framing is consistent.
+[ ] Review Discover and other screenshots for product details you do not want public.
+[ ] Check images for personal data, debug information, internal URLs, or sensitive content.
+[ ] Verify image filenames and links work on GitHub.
+[ ] Inspect the repository's full commit history for accidentally committed private material.
+[ ] Review the public repository from a logged-out browser window.
 -->
 
 ## 🔗 Other Work
@@ -172,6 +165,6 @@ This repository contains documentation and selected screenshots only. It does **
 
 ## 🤝 Contact
 
-Interested in discussing iOS development, application engineering, or software development opportunities?
+Interested in discussing iOS development or software engineering opportunities?
 
 [Email](mailto:sam@samhuss.dev) · [LinkedIn](https://www.linkedin.com/in/samhuss/)
