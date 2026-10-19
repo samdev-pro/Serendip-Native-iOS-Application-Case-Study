@@ -165,6 +165,5 @@ This is a **documentation-only portfolio repository**. Application source code, 
 
 ## 🤝 Contact
 
-Interested in discussing iOS development or software engineering opportunities?
-
-[Email](mailto:sam@samhuss.dev) · [LinkedIn](https://www.linkedin.com/in/samhuss/)
+Interested in discussing iOS development or software engineering opportunities? Let’s connect.<br />
+📧 [Email Me](mailto:sam@samhuss.dev)  💼 [LinkedIn](https://www.linkedin.com/in/samhuss/)
